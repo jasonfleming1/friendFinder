@@ -16,14 +16,19 @@ var friendData = require("../data/friends");
 //make routing happen
 module.exports = function (app) {
     
-    //1) GET
-    app.get("../data", function (req, res) {
-        res.json(friendData);
+    //1) GET => send the friends data to user
+    app.get("../api/friends", function (req, res) {
+        res.json(friends);
     });
 
-    //2) POST
-    app.post("../data", function (req, res) {
+    //2) POST => send the serveyResults to friends db
+    app.post("../api/friends", function (req, res) {
         req.body.server = dataArray.push(req.body);
         res.json(req.body);
+        alert("hey test")
     });
+
+    //==============PSEEUDO CODE==============
+    //send serveyResults.score to an array
+    var userScore = req.body.scores
 };
