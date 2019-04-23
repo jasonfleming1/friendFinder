@@ -3,19 +3,77 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Friend Finder!</title>
+    <title>Friend Finder</title>
 
     <!-- Latest compiled and minified CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Some Styles -->
+
+    <style>
+        .btn {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #linked {
+            color: black;
+        }
+
+        /* Lighter background on mouse-over */
+        .btn:hover {
+            background-color: royalblue;
+            color: white;
+            size: 20px;
+            font-weight: bold;
+        }
+
+        #linked:hover {
+            color: royalblue;
+            font-weight: bold;
+        }
+    </style>
+    
 </head>
 
 <body>
 
-    <div containter>
-        <p>test test test</p>
+    <div class="container">
+
+        <!-- PRIMARY NAVIGATION -->
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4"><i class="fab fa-facebook" aria-hidden="true"></i>&nbspFriend Finder</h1>
+                <p class="lead">Find a friend, by finding yourself</p>
+                <hr>
+                <br>
+                <p>Let's find a friend</p>
+                <br>
+                <div>
+                    <a href="../public/survey.html"><button type="button" class="btn btn-lg btn-primary"><i
+                                class="far fa-list-alt" aria-hidden="true"></i>&nbspGo to Survey</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECONDARY NAVIGATION -->
+
+        <div class="row">
+            <div class="container">
+                <a id="linked" href="../data/friends.js"><i class="fas fa-database"></i>&nbspFriends</a>&nbsp&nbsp|&nbsp&nbsp
+                <a id="linked" href="https://github.com/jasonfleming1"><i class="fab fa-github"></i>&nbspGIT</a>
+            </div>
+        </div>
 
     </div>
 
