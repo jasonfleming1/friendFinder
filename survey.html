@@ -199,11 +199,33 @@
 
     <!-- =============== MODAL WINDOW SHOW BESTFRIEND FROM POST REPLY =============== -->
 
+    <div id="bestFriend" class="modal fade" role="dialog">
+        <div class="modal dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">
+                        <strong>Best Match</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="bestFriendName"></h2>
+                    <img id="bestFriendPhoto"
+                        src="https://cdn-static.denofgeek.com/sites/denofgeek/files/styles/main_wide/public/2019/01/dune-frank-herbert.jpg?itok=Fa4gpNJn"
+                        alt="Dune">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div> <!-- end modal content -->
+        </div> <!-- end modal dialog -->
+    </div> <!-- end modal -->
+
+
     <!-- =============== JAVASCRIPT =============== -->
 
     <script type="text/javascript">
-        //==============TRIGGER VALIDATION EVENT==============
-
+        // onclick event to start submission process
         $("#btnSubmit").on("click", function () {
 
             // validate text input fields name/image isnotnull
@@ -236,23 +258,23 @@
                     name: $("#name").val().trim(),
                     photo: $("#photo").val().trim(),
                     scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val()
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
                     ]
                 };
                 //use a POST call to the apiroutes file
-                $.post("/api/friends", newPerson, function(data) {
-                    alert("next we'll grab the name.text(data.name)");
-                    alert("then we'll grab the image.attr(src, data.photo");
-                    alert("then we'll push data to the modal by .modal(toggle)")
+                $.post("/api/friends", newPerson, function (data) {
+                    $("#bestFriendName").text(data.name);
+                    $("#bestFriendPhoto").attr(data.name);
+                    $("#bestFriend").modal("toggle");
                 });
                 //alert("You win"); //validation qc event
                 //alert("You need to complete the fields"); //validation qc event
