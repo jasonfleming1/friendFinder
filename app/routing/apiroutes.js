@@ -18,7 +18,7 @@ module.exports = function (app) {
     
     //1) GET => a GET call at the route will return friends data
     app.get("/api/friends", function (req, res) {
-        res.json(friends);
+        res.json(friendData);
     });
 
     //2) POST => a POST call at the route will add friend and respond with a bestFriend
