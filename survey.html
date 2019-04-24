@@ -5,37 +5,18 @@
     <meta charset="UTF-8" />
     <title>Friend Finder</title>
 
-    <!-- Latest compiled and minified CSS -->
+    <!-- =============== CSS REFERENCES =============== -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css" />
 
-    <!-- Latest compiled and minified CSS -->
+    <!-- =============== FUNCTIONALITY REFERENCES =============== -->
+
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <!-- Some Styles -->
-
-    <style>
-        /* buttons */
-
-        #linked {
-            color: black;
-        }
-
-        h4 {
-            box-shadow: #C0C0C0;
-            text-shadow: #C0C0C0;
-            color: #808080;
-        }
-
-        #linked:hover {
-            color: royalblue;
-            font-weight: bold;
-        }
-    </style>
 
 </head>
 
@@ -43,24 +24,28 @@
 
     <div class="container">
 
-        <!-- Survey  -->
+        <!-- =============== SURVEY HEADER =============== -->
+
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h1><strong>Friend Finder's Survey</strong></h1>
+                        <h1>Friend Finder's Survey</h1>
                     </div>
                 </div>
             </div>
             <br>
             <hr>
             <br>
+
+            <!-- =============== SURVEY QUESTIONS =============== -->
+
             <div class="col-12">
                 <div class="card-body">
                     <form>
                         <div class="form-group">
                             <br>
-                            <h4><strong>Your Profile</strong></h4>
+                            <h4>Your Profile</h4>
                             <hr>
                             <br>
                             <input type="text" placeholder="Name (required)" name="" id="name"
@@ -70,9 +55,9 @@
                                 class="form-control form-control-lg" required>
                             <br>
                             <br>
-                            <h4><strong>Your Interests</strong></h4>
+                            <h4>Your Interests</h4>
                             <hr>
-                            <h6><strong>Question 1</strong></h6>
+                            <h6>Question 1</h6>
                             <label for="q1">Your mind is always buzzing with unexplored ideas and plans.</label><br>
                             <select class="form-control" id="q1" required>
                                 <option value="" selected>Select an Option</option>
@@ -83,7 +68,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 2</strong></h6>
+                            <h6>Question 2</h6>
                             <label for="q2">Generally speaking, you rely more on your experience than your
                                 imagination.</label><br>
                             <select class="form-control" id="q2" required>
@@ -95,7 +80,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 3</strong></h6>
+                            <h6>Question 3</h6>
                             <label for="q3">You find it easy to stay relaxed and focused even when there is some
                                 pressure.</label><br>
                             <select class="form-control" id="q3" required>
@@ -107,7 +92,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 4</strong></h6>
+                            <h6>Question 4</h6>
                             <label for="q4">You rarely do something just out of sheer curiosity.</label><br>
                             <select class="form-control" id="q4" required>
                                 <option value="" selected>Select an Option</option>
@@ -118,7 +103,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 5</strong></h6>
+                            <h6>Question 5</h6>
                             <label for="q5">People can rarely upset you.</label><br>
                             <select class="form-control" id="q5" required>
                                 <option value="0" selected>Select an Option</option>
@@ -129,7 +114,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 6</strong></h6>
+                            <h6>Question 6</h6>
                             <label for="q6">It is often difficult for you to relate to other people’s
                                 feelings.</label><br>
                             <select class="form-control" id="q6" required>
@@ -141,7 +126,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 7</strong></h6>
+                            <h6>Question 7</h6>
                             <label for="q7">In a discussion, truth should be more important than people’s
                                 sensitivities.</label><br>
                             <select class="form-control" id="q7" required>
@@ -153,7 +138,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 8</strong></h6>
+                            <h6>Question 8</h6>
                             <label for="q8">You rarely get carried away by fantasies and ideas.</label><br>
                             <select class="form-control" id="q8" required>
                                 <option value="" selected>Select an Option</option>
@@ -164,7 +149,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 9</strong></h6>
+                            <h6>Question 9</h6>
                             <label for="q9">You think that everyone’s views should be respected regardless of whether
                                 they are supported by facts or not.</label><br>
                             <select class="form-control" id="q9" required>
@@ -176,7 +161,7 @@
                                 <option value="5">5 (Strongly Agree)</option>
                             </select><br>
                             <br>
-                            <h6><strong>Question 10</strong></h6>
+                            <h6>Question 10</h6>
                             <label for="q10">You feel more energetic after spending time with a group of
                                 people.</label><br>
                             <select class="form-control" id="q10" required>
@@ -191,60 +176,66 @@
                             <br>
                             <button type="submit" class="btn btn-primary btn-md" id="btnSubmit">Submit</button>
                         </div>
-                    </form>
-                    <!--form group-->
-                </div>
-                <!--card body-->
-            </div> <!-- survey column -->
+                    </form> <!-- end form group -->
+                </div> <!-- end card body -->
+            </div> <!-- end survey column -->
 
-            <!-- SECONDARY NAVIGATION -->
+
+            <!-- =============== SECONDARY NAVIGATION =============== -->
 
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         <a id="linked" href="../data/friends.js"><i
                                 class="fas fa-database"></i>&nbspFriends</a>&nbsp&nbsp|&nbsp&nbsp
-                        <a id="linked" href="https://github.com/jasonfleming1"><i class="fab fa-github"></i>&nbspGIT</a>
+                        <a id="linked"
+                            href="https://urldefense.proofpoint.com/v2/url?u=https-3A__github.com_jasonfleming1&d=DwMGaQ&c=jFUsgrbK2p_c8s4WVZY8yA&r=6AfcpDxZroIp2TqPvUqZ1xUN42tnmv0ENgoS6NvYTY0&m=YLmnptXiHAqPZB5L0J5ETE1dbAzorCe0yeA1zVwHyVI&s=OXQ9wp_XWTW7j8yP1lBXeYq_73FLtcsbDFliIuT2bn4&e="><i
+                                class="fab fa-github"></i>&nbspGIT [github.com]</a>
                     </div>
                 </div>
             </div>
-        </div> <!-- survey row -->
-    </div> <!-- main container -->
+        </div> <!-- end survey row -->
+    </div> <!-- end main container -->
 
-    <!-- MODAL -->
+    <!-- =============== MODAL WINDOW HANDLES REPLY FROM API ROUTES =============== -->
 
-    <!-- SCRIPTING AND VALIDATION -->
+    <!-- =============== JAVASCRIPT =============== -->
 
     <script type="text/javascript">
-        // click event == was thinking "required" would work, but the click event takes priority over the 'required' form instructions
-
+        //==============TRIGGER VALIDATION EVENT==============
 
         $("#btnSubmit").on("click", function () {
 
-            // Form validation
+            // validate text input fields name/image isnotnull
             function validateForm() {
+
+                //declare a variable to manage form validity, default trule
                 var isValid = true;
+
+                //evaluate each text input fields for isNull
                 $('form-control form-control-lg').each(function () {
                     if ($(this).val() === '')
                         isValid = false;
                 });
 
+                //evaluate each selection field for isNull
                 $('.form-control').each(function () {
-
                     if ($(this).val() === "")
                         isValid = false;
                 });
 
+                //if all fields are notNull return default isValid = true
                 return isValid;
             }
 
-            // If all required fields are filled
+            // handle the form validation as ifTrue, ifFalse replies
             if (validateForm() == true) {
-                alert("You win");
+                //if the form is validated store and trim the values from the user submission
+                //use a POST to the routes fo
+                //alert("You win"); //validation qc event
             } else {
-                alert("You need to complete the fields" + name);
+                //alert("You need to complete the fields"); //validation qc event
             }
-
         });
     </script>
 

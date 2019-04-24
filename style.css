@@ -1,0 +1,56 @@
+/* global styles */
+
+    /* secondary navigation html */
+    #linked {
+        color: black;
+    }
+
+    #linked:hover {
+        color: royalblue;
+        font-weight: bold;
+    }
+
+    /* buttons */
+    .btn {
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: royalblue;
+        color: white;
+        size: 20px;
+        font-weight: bold;
+    }
+
+/* survey.html styles */
+
+    /* question styles */
+    h4 {
+        box-shadow: #C0C0C0;
+        text-shadow: #C0C0C0;
+        color: #808080;
+        font-weight: bold;
+    }
+
+    h6 {
+        font-weight: bold;
+    }
+
+    /* input and selection styles */
+
+    .form-control {
+        width: 25%;
+    }
+
+    .form-control-lg {
+        width: 75%;
+    }
+
+
+
