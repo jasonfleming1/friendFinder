@@ -78,7 +78,7 @@ module.exports = function (app) {
     //============== RESPONSES ==============
 
     //'push' the newFriend to the friends.js file
-    friends.push(newFriend);
+    friendData.push(newFriend);
 
     //respond with a bestFriend to the survey.html file
     res.json(myFriend)
