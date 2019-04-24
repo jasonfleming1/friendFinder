@@ -210,9 +210,7 @@
                 </div>
                 <div class="modal-body">
                     <h2 id="bestFriendName"></h2>
-                    <img id="bestFriendPhoto"
-                        src="https://cdn-static.denofgeek.com/sites/denofgeek/files/styles/main_wide/public/2019/01/dune-frank-herbert.jpg?itok=Fa4gpNJn"
-                        alt="Dune">
+                    <img id="bestFriendPhoto"src="https://cdn-static.denofgeek.com/sites/denofgeek/files/styles/main_wide/public/2019/01/dune-frank-herbert.jpg?itok=Fa4gpNJn" alt="Dune">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -225,6 +223,7 @@
     <!-- =============== JAVASCRIPT =============== -->
 
     <script type="text/javascript">
+    
         // onclick event to start submission process
         $("#btnSubmit").on("click", function () {
 
@@ -254,7 +253,7 @@
             if (validateForm() == true) {
 
                 //if the form is validated store and trim values in an object
-                var newPerson = {
+                var newFriend = {
                     name: $("#name").val().trim(),
                     photo: $("#photo").val().trim(),
                     scores: [
@@ -271,7 +270,7 @@
                     ]
                 };
                 //use a POST call to the apiroutes file
-                $.post("/api/friends", newPerson, function (data) {
+                $.post("/api/friends", newFriend, function (data) {
                     $("#bestFriendName").text(data.name);
                     $("#bestFriendPhoto").attr(data.name);
                     $("#bestFriend").modal("toggle");

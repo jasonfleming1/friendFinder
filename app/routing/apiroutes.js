@@ -24,37 +24,62 @@ module.exports = function (app) {
     //2) POST => a POST call at the route will add friend and respond with a bestFriend
     app.post("/api/friends", function (req, res) {
 
+        //============== DATA HANDLING ==============
+
         //store the newFriend object
         var newFriend = req.body;
 
-        //parse out the newFriend object
-        var newName = newFriend.name;
-        var newPhoto = newFriend.photo;        
-        var newScores = newFriend.scores;
+        //declare variables to hold new scores
+        var newScore;
+        var bestScore;
 
-        //declare an object to store the bestFriend
-        var bestFriend = {
+        //declare a variable to hold the newFriend and bestFriend friendiness
+        var matchScore;
+
+        //declare an object to hold the bestFriend
+        var myFriend = {
             name: "",
             photo: "",
-            bfScore: 0
+            bfScore: 100
         }
 
+        //============== SCORING CONDITIONS ==============
+
         //loop through the friends.js file to get each entry
-        //loop through the "i"th friend.js and subtract the newFriend.score.each from ith's score
-        //declare a variable to hold the math result
-        //grab the bestFriend 
-        
+        for (var i = 0; i < friends.length; i++) {
+
+            //hold the iTH friends
+            var bestFriend = friends[i];
+
+            //set the matchScore in the iTH loop to zero
+            matchScore = 0;
+
+            //loop through the iTH score and get the match
+            for (var f = 0; f < newFriend.scores.length; f++) {
+
+                //assign scores to the declared variables
+                newScore = newFriend.scores[j];
+                bestScore = bestFriend.scores[j];
+
+                //determine who the newFriend's bestFriend is by survey scores
+                matchScore += Math.abs(parseInt(newScore) - parseInt(bestScore));
+
+            }
+       
+            //get newFriend's bestFriend information
+            if (matchScore <= myFriend.bfScore) {
+                myFriend.name = bestFriend.name;
+                myFriend.photo = bestFriend.photo;
+                myFriend.bfScore = matchScore;
+            }
+        };
     });
+
+    //============== RESPONSES ==============
 
     //'push' the newFriend to the friends.js file
     friends.push(newFriend);
 
     //respond with a bestFriend to the survey.html file
-    //res.json(bestFriend)
+    res.json(myFriend)
 };
-
-/*==============RECYCLE BIN==============
-    req.body.server = dataArray.push(req.body); 
-    res.json(req.body);
-    var userScore = req.body.scores
-*/
