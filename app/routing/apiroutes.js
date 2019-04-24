@@ -16,19 +16,45 @@ var friendData = require("../data/friends");
 //make routing happen
 module.exports = function (app) {
     
-    //1) GET => send the friends data to user
-    app.get("../api/friends", function (req, res) {
+    //1) GET => a GET call at the route will return friends data
+    app.get("/api/friends", function (req, res) {
         res.json(friends);
     });
 
-    //2) POST => send the serveyResults to friends db
-    app.post("../api/friends", function (req, res) {
-        req.body.server = dataArray.push(req.body);
-        res.json(req.body);
-        alert("hey test")
+    //2) POST => a POST call at the route will add friend and respond with a bestFriend
+    app.post("/api/friends", function (req, res) {
+
+        //store the newFriend object
+        var newFriend = req.body;
+
+        //parse out the newFriend object
+        var newName = newFriend.name;
+        var newPhoto = newFriend.photo;        
+        var newScores = newFriend.scores;
+
+        //declare an object to store the bestFriend
+        var bestFriend = {
+            name: "",
+            photo: "",
+            bfScore: 0
+        }
+
+        //loop through the friends.js file to get each entry
+        //loop through the "i"th friend.js and subtract the newFriend.score.each from ith's score
+        //declare a variable to hold the math result
+        //grab the bestFriend 
+        
     });
 
-    //==============PSEEUDO CODE==============
-    //send serveyResults.score to an array
-    var userScore = req.body.scores
+    //'push' the newFriend to the friends.js file
+    friends.push(newFriend);
+
+    //respond with a bestFriend to the survey.html file
+    //res.json(bestFriend)
 };
+
+/*==============RECYCLE BIN==============
+    req.body.server = dataArray.push(req.body); 
+    res.json(req.body);
+    var userScore = req.body.scores
+*/

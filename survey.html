@@ -197,7 +197,7 @@
         </div> <!-- end survey row -->
     </div> <!-- end main container -->
 
-    <!-- =============== MODAL WINDOW HANDLES REPLY FROM API ROUTES =============== -->
+    <!-- =============== MODAL WINDOW SHOW BESTFRIEND FROM POST REPLY =============== -->
 
     <!-- =============== JAVASCRIPT =============== -->
 
@@ -230,11 +230,34 @@
 
             // handle the form validation as ifTrue, ifFalse replies
             if (validateForm() == true) {
-                //if the form is validated store and trim the values from the user submission
-                //use a POST to the routes fo
+
+                //if the form is validated store and trim values in an object
+                var newPerson = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                    ]
+                };
+                //use a POST call to the apiroutes file
+                $.post("/api/friends", newPerson, function(data) {
+                    alert("next we'll grab the name.text(data.name)");
+                    alert("then we'll grab the image.attr(src, data.photo");
+                    alert("then we'll push data to the modal by .modal(toggle)")
+                });
                 //alert("You win"); //validation qc event
-            } else {
                 //alert("You need to complete the fields"); //validation qc event
+            } else {
+                alert("We cannot submit your profile. Please fully complete your profile!")
             }
         });
     </script>
