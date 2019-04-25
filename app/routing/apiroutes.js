@@ -21,7 +21,7 @@ module.exports = function (app) {
         res.json(friendData);
     });
 
-    //2) POST => a POST call at the route will add friend and respond with a bestFriend
+    //2) POST => a POST call at the route will store the new friend and respond with a bestFriend
     app.post("/api/friends", function (req, res) {
 
         //============== DATA HANDLING ==============
@@ -30,8 +30,8 @@ module.exports = function (app) {
         var newFriend = req.body;
 
         //declare variables to hold new scores
-        var newScore;
-        var bestScore;
+        var newScore; //the score for the person submitting the survey
+        var bestScore; //the score of the friends array that matches
 
         //declare a variable to hold the newFriend and bestFriend friendiness
         var matchScore;
@@ -40,7 +40,7 @@ module.exports = function (app) {
         var myFriend = {
             name: "",
             photo: "",
-            bfScore: 100
+            bfScore: 03030
         }
 
         //============== SCORING CONDITIONS ==============
@@ -58,8 +58,8 @@ module.exports = function (app) {
             for (var f = 0; f < newFriend.scores.length; f++) {
 
                 //assign scores to the declared variables
-                newScore = newFriend.scores[j];
-                bestScore = bestFriend.scores[j];
+                newScore = newFriend.scores[f];
+                bestScore = bestFriend.scores[f];
 
                 //determine who the newFriend's bestFriend is by survey scores
                 matchScore += Math.abs(parseInt(newScore) - parseInt(bestScore));
