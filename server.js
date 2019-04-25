@@ -19,10 +19,10 @@ app.use(express.json());
 //==============REQUIRE ROUTES==============
 
 //route to api data
-require("./app/routing/apiroutes")(app);
+//require("./app/routing/apiroutes")(app);
 
 //reoute to html page handling
-require("./app/routing/htmlroutes")(app);
+//require("./app/routing/htmlroutes")(app);
 
 //==============LISTENER==============
 
