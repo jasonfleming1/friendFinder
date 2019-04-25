@@ -21,8 +21,8 @@ app.use(express.json());
 //route to api data
 //require("./app/routing/apiroutes")(app);
 
-//reoute to html page handling
-//require("./app/routing/htmlroutes")(app);
+//reroute to html page handling
+require("./app/routing/htmlroutes")(app);
 
 //==============LISTENER==============
 
