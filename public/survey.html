@@ -106,7 +106,7 @@
                             <h6>Question 5</h6>
                             <label for="q5">People can rarely upset you.</label><br>
                             <select class="form-control" id="q5" required>
-                                <option value="0" selected>Select an Option</option>
+                                <option value="" selected>Select an Option</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -166,7 +166,7 @@
                                 people.</label><br>
                             <select class="form-control" id="q10" required>
                                 <option value="" selected>Select an Option</option>
-                                <option value="">1 (Strongly Disagree)</option>
+                                <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -186,10 +186,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a id="linked" href="../data/friends.js" target="_blank"><i
+                        <a id="linked" href="/api/friends" target="_blank"><i
                                 class="fas fa-database"></i>&nbspFriends</a>&nbsp&nbsp|&nbsp&nbsp
-                        <a id="linked"
-                            href="https://github.com/jasonfleming1" target="_blank"><i
+                        <a id="linked" href="https://github.com/jasonfleming1/friendFinder" target="_blank"><i
                                 class="fab fa-github"></i>&nbspGIT [github.com]</a>
                     </div>
                 </div>
@@ -199,18 +198,20 @@
 
     <!-- =============== MODAL WINDOW SHOW BESTFRIEND FROM POST REPLY =============== -->
 
-    <div id="bestFriend" class="modal fade" role="dialog">
-        <div class="modal dialog">
+    <div id="bestFriend-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h2 class="modal-title">
-                        <strong>Best Match</strong>
+                        <strong>Your Best Friend</strong>
                     </h2>
                 </div>
                 <div class="modal-body">
                     <h2 id="bestFriendName"></h2>
-                    <img id="bestFriendPhoto"src="https://cdn-static.denofgeek.com/sites/denofgeek/files/styles/main_wide/public/2019/01/dune-frank-herbert.jpg?itok=Fa4gpNJn" alt="Dune">
+                    <img id="bestFriendPhoto"
+                        src="https://cdn-static.denofgeek.com/sites/denofgeek/files/styles/main_wide/public/2019/01/dune-frank-herbert.jpg?itok=Fa4gpNJn"
+                        alt="Dune">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -223,7 +224,6 @@
     <!-- =============== JAVASCRIPT =============== -->
 
     <script type="text/javascript">
-    
         // onclick event to start submission process
         $("#btnSubmit").on("click", function () {
 
@@ -269,11 +269,13 @@
                         $("#q10").val()
                     ]
                 };
+
+                //alert(newFriend);
                 //use a POST call to the apiroutes file
                 $.post("/api/friends", newFriend, function (data) {
                     $("#bestFriendName").text(data.name);
-                    $("#bestFriendPhoto").attr(data.name);
-                    $("#bestFriend").modal("toggle");
+                    $("#bestFriendPhoto").attr("src", data.photo);
+                    $("#bestFriend-modal").modal("toggle");
                 });
                 //alert("You win"); //validation qc event
                 //alert("You need to complete the fields"); //validation qc event
