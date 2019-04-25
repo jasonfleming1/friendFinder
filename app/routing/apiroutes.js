@@ -73,8 +73,7 @@ module.exports = function (app) {
                 myFriend.bfScore = matchScore;
             }
         };
-    });
-
+    
     //============== RESPONSES ==============
 
     //'push' the newFriend to the friends.js file
@@ -82,4 +81,6 @@ module.exports = function (app) {
 
     //respond with a bestFriend to the survey.html file
     res.json(myFriend)
+
+    });
 };
