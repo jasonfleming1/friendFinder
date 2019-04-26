@@ -226,7 +226,9 @@
     <script type="text/javascript">
         // onclick event to start submission process
         $("#btnSubmit").on("click", function () {
-
+            //adding prevent default
+            event.preventDefault();
+            
             // validate text input fields name/image isnotnull
             function validateForm() {
 
